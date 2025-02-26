@@ -8,9 +8,17 @@ on:
         - '*'
 
 jobs:
-    call-test-workflow:
-        runs-on: ubuntu-22.04
-        steps:
-            - run: | 
-                ls -a /home/runner/work/wazuh-indexer-reporting/wazuh-indexer-reporting
-                  
+  call-test-workflow:
+    runs-on: ubuntu-22.04
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '21'
+
+      - name: Run Gradle check
+        run: ./gradlew check  
