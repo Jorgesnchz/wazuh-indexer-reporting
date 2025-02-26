@@ -12,9 +12,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - run: |
-                cd ../
-            - run: |
-                pwd 
+                cd ../ | pwd
             - run: | 
-                find -name "gradlew"
+                find -name "gradlew" -exec dirname {} \; | sort -u
                   
