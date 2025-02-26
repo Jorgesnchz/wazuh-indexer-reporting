@@ -12,5 +12,5 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - run: | 
-                find /home/runner/work/wazuh-indexer-reporting/ -name "gradlew" -exec dirname {} \; | sort -u
+                ls -a /home/runner/work/wazuh-indexer-reporting/
                   
