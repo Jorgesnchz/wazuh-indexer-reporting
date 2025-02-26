@@ -7,6 +7,8 @@ name: Build packages
 # - Invoked from another workflow
 on:
   push:
+    paths-ignore:
+      - '**/*.md'
   workflow_dispatch:
     inputs:
       revision:
