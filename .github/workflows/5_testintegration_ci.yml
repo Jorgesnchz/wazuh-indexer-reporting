@@ -1,20 +1,22 @@
-name: Build packages (on push)
+name: CI
 
 # This workflow runs when any of the following occur:
 # - On any changes
 on:
     push:
-        branches:
-        - '*'
 
+env:
+     wazuh_reporting_ref: ${GITHUB_REF}
 jobs:
   call-test-workflow:
     runs-on: ubuntu-22.04
+    
     steps:
+    
       - uses: actions/checkout@v4
         with:
           repository: wazuh/wazuh-indexer-reporting
-          ref: ${GITHUB_REF}
+          ref: ${wazuh_reporting_ref}
 
       - uses: actions/setup-java@v4
         with:
