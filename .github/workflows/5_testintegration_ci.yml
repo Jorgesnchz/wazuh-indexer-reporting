@@ -6,7 +6,7 @@ on:
     push:
 
 env:
-     wazuh_reporting_ref: ${GITHUB_REF}
+     wazuh_reporting_ref: ${{ github.ref }}
 jobs:
   call-test-workflow:
     runs-on: ubuntu-22.04
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: wazuh/wazuh-indexer-reporting
-          ref: ${{wazuh_reporting_ref}}
+          ref: ${{ env.wazuh_reporting_ref }}
 
       - uses: actions/setup-java@v4
         with:
