@@ -12,15 +12,15 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup JDK
-        uses: actions/setup-java@v2
+      - uses: actions/checkout@v4
         with:
-          java-version: '21'
-          with:
+          repository: wazuh/wazuh-indexer-plugins
+          ref: ${{ inputs.wazuh_plugins_ref }}
+
+      - uses: actions/setup-java@v4
+        with:
           distribution: temurin
+          java-version: 21
 
       - name: Run Gradle check
         run: ./gradlew check  
