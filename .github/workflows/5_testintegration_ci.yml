@@ -12,5 +12,5 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - run: | 
-                ls -a /home/runner/work/wazuh-indexer-reporting/
+                ls -a /home/runner/work/wazuh-indexer-reporting/wazuh-indexer-reporting
                   
