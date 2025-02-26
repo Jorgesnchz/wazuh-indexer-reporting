@@ -11,8 +11,6 @@ jobs:
     call-test-workflow:
         runs-on: ubuntu-22.04
         steps:
-            - run: |
-                cd ../ | pwd
             - run: | 
-                find -name "gradlew" -exec dirname {} \; | sort -u
+                find /home/runner/work/wazuh-indexer-reporting/ -name "gradlew" -exec dirname {} \; | sort -u
                   
