@@ -13,6 +13,6 @@ jobs:
     
     steps:
       - name: Print branch name
-        run: echo "Current branch is: ${{ github.ref }}"
+        run: echo "Current branch is ${{ github.ref }}"
 
      
