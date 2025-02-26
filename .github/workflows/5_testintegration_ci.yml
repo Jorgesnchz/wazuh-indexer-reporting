@@ -13,6 +13,8 @@ jobs:
         steps:
             - run: |
                 cd ../
+            - run: |
                 pwd 
+            - run: | 
                 find -name "gradlew"
                   
