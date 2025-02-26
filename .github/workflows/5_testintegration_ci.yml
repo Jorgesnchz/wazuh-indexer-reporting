@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
-      - name: Set branch name
-        id: set-branch-name
-        run: echo "aux=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+      - run: echo ${GITHUB_REF}
 
-      - name: Print branch name
-        run: echo "Current branch is ${{ env.aux }}"
+     
