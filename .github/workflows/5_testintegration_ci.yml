@@ -10,8 +10,16 @@ on:
 jobs:
   call-test-workflow:
     runs-on: ubuntu-22.04
-    
     steps:
-      - run: echo ${GITHUB_REF}
+      - uses: actions/checkout@v4
+        with:
+          repository: wazuh/wazuh-indexer-reporting
+          ref: ${GITHUB_REF}
 
-     
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Run Gradle check
+        run: ./gradlew check  
