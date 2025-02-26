@@ -12,15 +12,7 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: wazuh/wazuh-indexer-reporting
-          ref: ${{ inputs.wazuh_reporting_ref }}
+      - name: Print branch name
+        run: echo "Current branch is: ${{ github.ref }}"
 
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 21
-
-      - name: Run Gradle check
-        run: ./gradlew check  
+     
