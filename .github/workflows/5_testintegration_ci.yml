@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: wazuh/wazuh-indexer-plugins
-          ref: ${{ inputs.wazuh_plugins_ref }}
+          repository: wazuh/wazuh-indexer-reporting
+          ref: ${{ inputs.wazuh_reporting_ref }}
 
       - uses: actions/setup-java@v4
         with:
